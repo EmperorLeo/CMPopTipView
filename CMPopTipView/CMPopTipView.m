@@ -516,6 +516,10 @@
     }
     
 	CGFloat W = containerView.bounds.size.width;
+	if([containerView isKindOfClass:[UIScrollView class]]) {
+        	W += containerView.bounds.origin.x;
+    	}
+
 	
 	CGPoint p = [targetView.superview convertPoint:targetView.center toView:containerView];
 	CGFloat x_p = p.x;
